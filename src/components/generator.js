@@ -56,8 +56,8 @@ export default class Generator extends React.Component {
         let suffix = this.generateSuffix();
 
         //make sure prefix and suffix are not the same
-        if (prefix.toLowerCase() == suffix){
-            while (prefix.toLowerCase() == suffix){
+        if (prefix.toLowerCase() === suffix){
+            while (prefix.toLowerCase() === suffix){
                 suffix = this.generateSuffix();
             }
         }
@@ -66,20 +66,10 @@ export default class Generator extends React.Component {
         return name;
     }
 
-    generateOneName = (e) => {
-        //generate name one time and push to array
-        let name = this.generateName();
+    generateXNames = (x) => {
+        //generate name x times
         let names = [];
-        names.push(name);
-
-        //store name in state
-        this.setState({names});
-    };
-
-    generateTenNames = (e) => {
-        //generate name ten times
-        let names = [];
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < x; i++) {
             names.push(this.generateName());
         }
 
@@ -90,8 +80,8 @@ export default class Generator extends React.Component {
     render() {
         return (
             <div className="center">
-                <Button className="padding" variant="dark" onClick={this.generateOneName}>Generate 1 Name</Button>
-                <Button className="padding" variant="dark" onClick={this.generateTenNames}>Generate 10 Names</Button>
+                <Button className="padding" variant="dark" onClick={() => this.generateXNames(1)}>Generate 1 Name</Button>
+                <Button className="padding" variant="dark" onClick={() => this.generateXNames(10)}>Generate 10 Names</Button>
                 {this.state.names.map((name) => <p>{name}</p>)}
             </div>
         );
