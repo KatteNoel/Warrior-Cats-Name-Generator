@@ -1,0 +1,36 @@
+body {
+  background-image: url(./images/fireheart.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  margin: 1rem;
+}
+
+.center {
+  background-color: white;
+  border: 2px solid black;
+  padding: 1rem;
+  margin: 1rem auto auto auto;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  width: 50%;  
+}
+
+.footer{
+  color: white;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+.padding {
+  padding: 1rem;
+  margin: 1rem;
+}
